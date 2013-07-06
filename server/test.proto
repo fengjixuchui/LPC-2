@@ -1,0 +1,24 @@
+import "LPC/base_type.proto";
+
+message Void {}
+message PID {
+	optional int32 value = 1;
+}
+
+message Text {
+	optional string value = 1;
+}
+message Time {
+	optional int32 value = 1;
+}
+
+service Test {
+	rpc GetPID(Void) returns(PID) { 
+		option (method_id) = 1;
+	}
+	
+	rpc GetTime(Text) returns(Time) { 
+		option (method_id) = 2;
+		option (push_service) = true;
+	}
+}

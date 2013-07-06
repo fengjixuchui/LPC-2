@@ -1,0 +1,13 @@
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.MethodOptions {
+	required int32 method_id = 50000;
+	optional bool push_service = 50001;
+}
+
+message LpcMessage {
+	required int32 dispatch_id = 1;	//这个字段在调用时是函数id, 返回时此字段的值是request_id
+	optional int32 request_id = 2;	//这个字段仅在调用时才有
+	optional bytes content = 3;
+};
+

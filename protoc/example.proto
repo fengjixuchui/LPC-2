@@ -1,0 +1,28 @@
+// 生成命令
+// protoc -I=.. --client_out=.. ../protoc/example.proto
+
+// 导入扩展选项
+import "path/to/base_type.proto";
+
+message Void {}
+message PID {
+	optional int32 value = 1;
+}
+
+message Text {
+	optional string value = 1;
+}
+message Time {
+	optional int32 value = 1;
+}
+
+service Test {
+	rpc GetPID(Void) returns(PID) { 
+		option (method_id) = 1;	// 这个选项是必须的
+	}
+	
+	rpc GetTime(Text) returns(Time) { 
+		option (method_id) = 2;
+		option (push_service) = true;	// 可选, 默认为false, 为true时生成push函数
+	}
+}

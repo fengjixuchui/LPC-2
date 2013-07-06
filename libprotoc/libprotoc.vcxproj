@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{556FB795-63EE-473D-A2CB-E131D27B02E9}</ProjectGuid>
+    <RootNamespace>libprotoc</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..;.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/wd4244 /wd4267 /wd4018 /wd4355 /wd4800 /wd4251 /wd4996 /wd4146 /wd4305 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\google\protobuf\compiler\code_generator.h" />
+    <ClInclude Include="..\google\protobuf\compiler\command_line_interface.h" />
+    <ClInclude Include="..\google\protobuf\compiler\subprocess.h" />
+    <ClInclude Include="..\google\protobuf\compiler\zip_writer.h" />
+    <ClInclude Include="..\google\protobuf\compiler\plugin.h" />
+    <ClInclude Include="..\google\protobuf\compiler\plugin.pb.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_enum.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_enum_field.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_extension.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_field.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_file.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_generator.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_helpers.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_message.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_message_field.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_options.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_primitive_field.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_service.h" />
+    <ClInclude Include="..\google\protobuf\compiler\cpp\cpp_string_field.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\google\protobuf\compiler\code_generator.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\command_line_interface.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\subprocess.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\zip_writer.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\plugin.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\plugin.pb.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_enum.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_enum_field.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_extension.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_field.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_file.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_generator.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_helpers.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_message.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_message_field.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_primitive_field.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_service.cc" />
+    <ClCompile Include="..\google\protobuf\compiler\cpp\cpp_string_field.cc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
