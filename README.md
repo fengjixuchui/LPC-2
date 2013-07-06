@@ -1,7 +1,7 @@
 LPC
 ===
 
-a windows local procedure call library based on protobuf
+LPC is a windows local procedure call library based on protobuf.
 
 USAGE
 ---
