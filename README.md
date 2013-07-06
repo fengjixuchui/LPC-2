@@ -6,7 +6,7 @@ LPC is a windows local procedure call library based on protobuf.
 USAGE
 ---
 
-Write a .proto file contained the LPC method definitions.
+Write a .proto file containing the LPC method definitions.
 
     // test.proto
     import "LPC/base_type.proto";
@@ -34,7 +34,7 @@ Write a .proto file contained the LPC method definitions.
   		}
   	}
   
-Use `--server_out` and `--client_out` with the protoc.exe to compile the .proto file into c++ source files.  
+Use `--server_out` and `--client_out` with the protoc.exe to compile the .proto file into C++ source files.  
 `test.pb.h` and `test.pb.cc` for the client. Another `test.pb.h`, `test.pb.cc` and `test_impl.pb.cc` for the server.
 Implement methods in `test_impl.pb.cc`
 
@@ -63,7 +63,7 @@ Implement methods in `test_impl.pb.cc`
     	SetEvent(reinterpret_cast<HANDLE>(stop_signal));
     }
     
-For my implementation, the server and the client must know the process id each other
+For my implementation, the server and the client must know the process id of each other.
 
     // server.cpp
     #include <windows.h>
